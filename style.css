@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #ffe5e5;
+    padding: 20px; /* Added padding to avoid screen edges */
 }
 
 .container {
@@ -21,19 +23,29 @@ body {
     align-items: center;
     gap: 20px;
     max-width: 500px;
-    margin: 20px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Adjusts the GIF for different screen sizes */
 .gif-img {
-    max-width: 250px;
+    max-width: 100%;
+    width: 250px;
     border-radius: 10px;
 }
 
+/* Button container */
 .container .btn {
     display: flex;
-    gap: 25px;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
 }
 
+/* Button styles */
 .btn a {
     text-decoration: none;
     color: #111;
@@ -43,6 +55,9 @@ body {
     box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, 0.3);
     font-weight: bold;
     transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: center;
+    min-width: 120px;
 }
 
 .btn a:hover {
@@ -50,12 +65,34 @@ body {
     transform: translateY(-2px);
 }
 
+/* Responsive Text */
 h1 {
     color: #333;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 p {
     color: #777;
     font-size: 1rem;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn a {
+        width: 100%; /* Buttons take full width for better accessibility */
+        padding: 12px 0;
+    }
+
+    .gif-img {
+        width: 200px;
+    }
 }
