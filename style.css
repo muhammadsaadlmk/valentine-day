@@ -1,76 +1,70 @@
-/* Reset Default Styles */
+/* Existing CSS - No changes */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: sans-serif;
 }
 
 body {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ffe5e5; /* Light pink background */
-    text-align: center;
-    padding: 20px;
+    background-color: #ffe5e5;
+    padding: 20px; /* Prevents content from touching screen edges */
 }
 
-/* Image Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+    width: 100%;
+}
+
+/* Image Responsive */
 .gif-img {
     max-width: 100%;
     width: 250px;
     border-radius: 10px;
 }
 
-/* Text Styling */
-h1 {
-    color: #ff4d6d;
-    font-size: 2rem;
-    margin-top: 20px;
-}
-
-p {
-    color: #777;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
 /* Button Container */
-.btn {
+.container .btn {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 25px;
+    flex-wrap: wrap; /* Ensures buttons wrap on small screens */
     justify-content: center;
 }
 
-/* Button Styles */
+/* Button Styling */
 .btn a {
     text-decoration: none;
-    color: white;
-    background: #ff4d6d;
-    padding: 12px 25px;
+    color: #111;
+    background: #fff;
+    padding: 10px 25px;
     border-radius: 8px;
-    font-size: 18px;
+    box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, 0.3);
     font-weight: bold;
-    transition: 0.3s ease;
-    min-width: 120px;
+    transition: all 0.3s ease;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 120px; /* Ensures button width consistency */
 }
 
 .btn a:hover {
-    background: #e63e5c;
+    background-color: #d4d4d4;
     transform: translateY(-2px);
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .btn {
@@ -79,7 +73,8 @@ p {
     }
 
     .btn a {
-        width: 100%; /* Full width buttons for mobile */
+        width: 100%; /* Full width buttons on mobile */
+        padding: 12px 0;
     }
 
     .gif-img {
